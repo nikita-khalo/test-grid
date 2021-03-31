@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from "react";
+import React, {useState} from "react";
 import ArrowBack from "../../icons/arrow-back";
 import Filter from "../../icons/filter";
 import AddMember from "../../icons/add-member";
@@ -9,10 +9,9 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 
-const Header = ({filterItem, filters}) => {
+const Header = ({filters, selectedFilter, setSelectedFilter}) => {
 
 	const [anchorEl, setAnchorEl] = useState(null);
-	const [selectedCategory, setSelectedCategory] = useState("none");
 
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
@@ -23,8 +22,7 @@ const Header = ({filterItem, filters}) => {
 	};
 
 	const handleSelectFilter = (value) => {
-		filterItem(value);
-		setSelectedCategory(value);
+		setSelectedFilter(value);
 		handleClose();
 	}
 
@@ -44,7 +42,7 @@ const Header = ({filterItem, filters}) => {
 				>
 					<MenuItem
 						onClick={() => handleSelectFilter("none")}
-						className={selectedCategory === "none" ? "active-item" : ""}
+						className={selectedFilter === "none" ? "active-item" : ""}
 					>
 						none
 					</MenuItem>
@@ -54,7 +52,7 @@ const Header = ({filterItem, filters}) => {
 								<MenuItem
 									key={item}
 									onClick={() => handleSelectFilter(item)}
-									className={selectedCategory === item ? "active-item" : ""}
+									className={selectedFilter === item ? "active-item" : ""}
 								>
 									{item}
 								</MenuItem>

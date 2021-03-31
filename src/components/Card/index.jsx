@@ -16,38 +16,38 @@ const Card = ({item}) => {
 						alt={item.text}
 					/>}
 				</div>
-				<div className="card_info">
-					<p className="card_text">
-						{item.text}
-					</p>
-					<div
-						className="card_additional"
-					>
-						<div className="card_owner">
-							<img src={item.ownerImage} alt={item.ownerName} className="avatar"/>
-							{/*<Avatar*/}
-							{/*    src={item.ownerImage}*/}
-							{/*    style={{*/}
-							{/*        width: 18,*/}
-							{/*        height: 18,*/}
-							{/*        marginRight: 7*/}
-							{/*    }}*/}
-							{/*/>*/}
-							<span>{item.ownerName}</span>
+			</LazyLoad>
+			<div className="card_info">
+				<p className="card_text">
+					{item.text}
+				</p>
+				<div
+					className="card_additional"
+				>
+					<div className="card_owner">
+						<img src={item.ownerImage} alt={item.ownerName} className="avatar"/>
+						{/*<Avatar*/}
+						{/*    src={item.ownerImage}*/}
+						{/*    style={{*/}
+						{/*        width: 18,*/}
+						{/*        height: 18,*/}
+						{/*        marginRight: 7*/}
+						{/*    }}*/}
+						{/*/>*/}
+						<span>{item.ownerName}</span>
+					</div>
+					<div className="card_icons_container">
+						<div className="card_icons_numbers">
+							<Hearth className="favorite_icon"/>
+							<span>{item.likes}</span>
 						</div>
-						<div className="card_icons_container">
-							<div className="card_icons_numbers">
-								<Hearth className="favorite_icon"/>
-								<span>{item.likes}</span>
-							</div>
-							<div className="card_icons_numbers">
-								<Comment className="comment_icon"/>
-								<span>{item.comments}</span>
-							</div>
+						<div className="card_icons_numbers">
+							<Comment className="comment_icon"/>
+							<span>{item.comments}</span>
 						</div>
 					</div>
 				</div>
-			</LazyLoad>
+			</div>
 		</div>
 	);
 }

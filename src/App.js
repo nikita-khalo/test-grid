@@ -6,12 +6,11 @@ import useItems from "./hooks/useItems";
 
 function App() {
 
-
-	const {filterItems, filters, filteredItems} = useItems();
+	const {filters, filteredItems, selectedFilter, setSelectedFilter} = useItems();
 
 	return (
     <div className="App">
-			<Header filters={filters} filterItem={filterItems}/>
+			<Header filters={filters} selectedFilter={selectedFilter} setSelectedFilter={setSelectedFilter}/>
       <Gallery items={filteredItems}/>
     </div>
   );

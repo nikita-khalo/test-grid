@@ -1,11 +1,11 @@
-import {useCallback, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import itemsService from "../services/items";
 
 const useItems = () => {
 
   const [items, setItems] = useState([]);
   const [filters, setFilters] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
+	const [selectedFilter, setSelectedFilter] = useState('none');
 
   useEffect(() => {
   	if (items.length === 0) {
@@ -20,7 +20,6 @@ const useItems = () => {
 				const uniqueCategories = categoriesArray.filter(onlyUnique);
 				setItems(itemsArray);
 				setFilters(uniqueCategories);
-				setFilteredItems(itemsArray);
 			})
 		}
   }, [items])
@@ -29,20 +28,15 @@ const useItems = () => {
 		return self.indexOf(value) === index;
 	}
 
-	const filterItems = useCallback((value) => {
-		if (value !== "none") {
-			const filteredArray = items.filter((item) => item.category === value);
-			setFilteredItems(filteredArray);
-		} else {
-			setFilteredItems(items);
-		}
-
-	}, [items])
+	const filteredItems = selectedFilter === "none"
+		? items
+		: items.filter((item) => item.category === selectedFilter);
 
 	return {
   	filters,
 		filteredItems,
-		filterItems
+		selectedFilter,
+		setSelectedFilter
 	}
 
 }

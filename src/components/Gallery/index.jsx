@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Masonry from 'react-masonry-component';
 import Card from "../Card";
-import useItems from "../../hooks/useItems";
 import Container from "../Container";
 import "./index.css"
 import Text from "../Text";
