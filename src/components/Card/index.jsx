@@ -8,7 +8,7 @@ const Card = ({item}) => {
 
 	return (
 		<div className="card">
-			<LazyLoad height={300}>
+			<LazyLoad height={250}>
 				<div>
 					{item.image && <img
 						className="card_image"
