@@ -1,0 +1,41 @@
+h2 {
+	font-family: Inter;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 34px;
+	letter-spacing: 0.30000001192092896px;
+	text-align: left;
+	color: #000000;
+}
+
+p {
+	font-family: Inter;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 0.30000001192092896px;
+	text-align: left;
+	color: #656974;
+}
+
+.chip {
+	margin: 0 5px;
+	padding: 3px 6px;
+	background: rgb(86 86 86 / 10%);
+	border-radius: 6px;
+	font-family: Inter;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 18px;
+	letter-spacing: 0.3499999940395355px;
+	text-align: left;
+	color: #656974;
+}
+
+.text {
+	padding-left: 15px;
+	max-width: 650px;
+}
