@@ -3,6 +3,7 @@ import LazyLoad from 'react-lazyload';
 import "./index.css"
 import Hearth from "../../icons/heath";
 import Comment from "../../icons/comment";
+import PropTypes from 'prop-types';
 
 const Card = ({item}) => {
 
@@ -26,14 +27,6 @@ const Card = ({item}) => {
 				>
 					<div className="card_owner">
 						<img src={item.ownerImage} alt={item.ownerName} className="avatar"/>
-						{/*<Avatar*/}
-						{/*    src={item.ownerImage}*/}
-						{/*    style={{*/}
-						{/*        width: 18,*/}
-						{/*        height: 18,*/}
-						{/*        marginRight: 7*/}
-						{/*    }}*/}
-						{/*/>*/}
 						<span>{item.ownerName}</span>
 					</div>
 					<div className="card_icons_container">
@@ -52,4 +45,16 @@ const Card = ({item}) => {
 	);
 }
 
+Card.propTypes = {
+	item: PropTypes.shape({
+		comments: PropTypes.number,
+		likes: PropTypes.number,
+		ownerName: PropTypes.string,
+		ownerImage: PropTypes.string,
+		image: PropTypes.string,
+		text: PropTypes.string
+	})
+}
+
 export default Card
+

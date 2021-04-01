@@ -8,6 +8,7 @@ import "./index.css";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import PropTypes from 'prop-types';
 
 const Header = ({filters, selectedFilter, setSelectedFilter}) => {
 
@@ -72,5 +73,11 @@ const Header = ({filters, selectedFilter, setSelectedFilter}) => {
 		</div>
 	)
 };
+
+Header.propTypes = {
+	filters: PropTypes.array,
+	selectedFilter: PropTypes.string,
+	setSelectedFilter: PropTypes.func
+}
 
 export default Header;

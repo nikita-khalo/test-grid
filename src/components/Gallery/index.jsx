@@ -4,6 +4,7 @@ import Card from "../Card";
 import Container from "../Container";
 import "./index.css"
 import Text from "../Text";
+import PropTypes from 'prop-types';
 
 const Gallery = ({items}) => {
 
@@ -35,6 +36,10 @@ const Gallery = ({items}) => {
 			}
 		</Container>
 	);
+}
+
+Gallery.propTypes = {
+	items: PropTypes.array
 }
 
 export default Gallery;
